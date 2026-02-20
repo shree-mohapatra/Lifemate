@@ -4,92 +4,92 @@ import { Link } from "react-router-dom";
 import "../styles/Exercise.css";
 import { supabase } from "../supabaseClient";
 
-import AbdominalCruncheGif from "../../../backend/animations/Abdominal crunches.gif";
-import AbdominalCruncheImg from "../../../backend/animations/ABDOMINAL CRUNCHES.jpg";
+import AbdominalCruncheGif from "../animations/Abdominal crunches.gif";
+import AbdominalCruncheImg from "../animations/ABDOMINAL CRUNCHES.jpg";
 
-import armCircleGif from "../../../backend/animations/arm circles.gif";
-import armCircleImg from "../../../backend/animations/arm circles.png";
+import armCircleGif from "../animations/arm circles.gif";
+import armCircleImg from "../animations/arm circles.png";
 
-import BackStretchGif from "../../../backend/animations/BACK STRETCHF.jpg";
-import BackStretchImg from "../../../backend/animations/BACK STRETCHF.jpg";
+import BackStretchGif from "../animations/BACK STRETCHF.jpg";
+import BackStretchImg from "../animations/BACK STRETCHF.jpg";
 
-import backwardLungeGif from "../../../backend/animations/BACKWARD LUNGEm.gif";
-import backwardLungeImg from "../../../backend/animations/BACKWARD LUNGEm.jpg";
+import backwardLungeGif from "../animations/BACKWARD LUNGEm.gif";
+import backwardLungeImg from "../animations/BACKWARD LUNGEm.jpg";
 
-import bentlegTwistGif from "../../../backend/animations/BENT LEG TWIST.gif";
-import bentlegTwistImg from "../../../backend/animations/BENT LEG TWIST.gif";
+import bentlegTwistGif from "../animations/BENT LEG TWIST.gif";
+import bentlegTwistImg from "../animations/BENT LEG TWIST.gif";
 
-import ButtocksGif from "../../../backend/animations/BUTTOCKSw.gif";
-import ButtocksImg from "../../../backend/animations/buttocksW.jpg";
+import ButtocksGif from "../animations/BUTTOCKSw.gif";
+import ButtocksImg from "../animations/buttocksW.jpg";
 
-import crossArmCruncheGif from "../../../backend/animations/CROSS ARM CRUNCHES.gif";
-import crossArmCruncheImg from "../../../backend/animations/CROSS ARM CRUNCHES.jpg";
+import crossArmCruncheGif from "../animations/CROSS ARM CRUNCHES.gif";
+import crossArmCruncheImg from "../animations/CROSS ARM CRUNCHES.jpg";
 
-import dumbbellGif from "../../../backend/animations/Dumbbell.gif";
-import dumbbelImg from "../../../backend/animations/DUMBBELL.jpg";
+import dumbbellGif from "../animations/Dumbbell.gif";
+import dumbbelImg from "../animations/DUMBBELL.jpg";
 
-import girlDoingYogaGif from "../../../backend/animations/Girl doing yoga.gif";
-import girlDoingYogaImg from "../../../backend/animations/girl doing yoga.png";
+import girlDoingYogaGif from "../animations/Girl doing yoga.gif";
+import girlDoingYogaImg from "../animations/girl doing yoga.png";
 
-import legRaises2Gif from "../../../backend/animations/LEG RISING2M.gif";
-import legRaises2Img from "../../../backend/animations/LEG RISING2M.png";
+import legRaises2Gif from "../animations/LEG RISING2M.gif";
+import legRaises2Img from "../animations/LEG RISING2M.png";
 
-import skippingGif from "../../../backend/animations/skippingW.png";
-import skippingImg from "../../../backend/animations/skippingW.png";
+import skippingGif from "../animations/skippingW.png";
+import skippingImg from "../animations/skippingW.png";
 
-import plankJacksGif from "../../../backend/animations/PLANK JACKS.gif";
-import plankJacksImg from "../../../backend/animations/PLANK JACKS.jpg";
+import plankJacksGif from "../animations/PLANK JACKS.gif";
+import plankJacksImg from "../animations/PLANK JACKS.jpg";
 
-import plieSquatsGif from "../../../backend/animations/PLIE SQUATS.gif";
-import plieSquatsImg from "../../../backend/animations/PLIE SQUATS.jpg";
+import plieSquatsGif from "../animations/PLIE SQUATS.gif";
+import plieSquatsImg from "../animations/PLIE SQUATS.jpg";
 
-import RCWLRGif from "../../../backend/animations/REVERSE CRUNCHES WITH LEG RAISED.gif";
-import RCWLRImg from "../../../backend/animations/REVERSE CRUNCHES WITH LEG RAISED.jpg";
+import RCWLRGif from "../animations/REVERSE CRUNCHES WITH LEG RAISED.gif";
+import RCWLRImg from "../animations/REVERSE CRUNCHES WITH LEG RAISED.jpg";
 
-import sideLungesGif from "../../../backend/animations/SIDE LUNGES.gif";
-import sideLungesImg from "../../../backend/animations/SIDE LUNGES.jpg";
+import sideLungesGif from "../animations/SIDE LUNGES.gif";
+import sideLungesImg from "../animations/SIDE LUNGES.jpg";
 
-import SkippingGif from "../../../backend/animations/skippingW.png";
-import SkippingImg from "../../../backend/animations/skippingW.png";
+import SkippingGif from "../animations/skippingW.png";
+import SkippingImg from "../animations/skippingW.png";
 
-import SASGif from "../../../backend/animations/STANDING ADDUCTOR STRETCH.gif";
-import SASImg from "../../../backend/animations/STANDING ADDUCTOR STRETCH.jpg";
+import SASGif from "../animations/STANDING ADDUCTOR STRETCH.gif";
+import SASImg from "../animations/STANDING ADDUCTOR STRETCH.jpg";
 
-import stepUpOnChairGif from "../../../backend/animations/stepup onto chair.gif";
-import stepUpOnChairImg from "../../../backend/animations/STEP - UP ONTO CHAIR (1).jpg";
+import stepUpOnChairGif from "../animations/stepup onto chair.gif";
+import stepUpOnChairImg from "../animations/STEP - UP ONTO CHAIR (1).jpg";
 
-import tricepsDipsGif from "../../../backend/animations/TRICEPS DIPS.gif";
-import tricepsDipsImg from "../../../backend/animations/TRICEPS DIPS.jpg";
+import tricepsDipsGif from "../animations/TRICEPS DIPS.gif";
+import tricepsDipsImg from "../animations/TRICEPS DIPS.jpg";
 
-import warmUpGif from "../../../backend/animations/warmupM.gif";
-import warmUpImg from "../../../backend/animations/warmupM.png";
+import warmUpGif from "../animations/warmupM.gif";
+import warmUpImg from "../animations/warmupM.png";
 
-import yoga2Gif from "../../../backend/animations/yoga2.gif";
-import yoga2Img from "../../../backend/animations/yoga2.jpg";
+import yoga2Gif from "../animations/yoga2.gif";
+import yoga2Img from "../animations/yoga2.jpg";
 
-import jumpingJackGif from "../../../backend/animations/jumpingjack.gif";
-import jumpingJackImg from "../../../backend/animations/jumpingjack.jpeg";
+import jumpingJackGif from "../animations/jumpingjack.gif";
+import jumpingJackImg from "../animations/jumpingjack.jpeg";
 
-import bicycleCrunchesGif from "../../../backend/animations/BICYCLE CRUNCHES.gif";
-import bicycleCrunchesImg from "../../../backend/animations/BICYCLE CRUNCHES.jpg";
+import bicycleCrunchesGif from "../animations/BICYCLE CRUNCHES.gif";
+import bicycleCrunchesImg from "../animations/BICYCLE CRUNCHES.jpg";
 
-import pushUpsGif from "../../../backend/animations/PUSH-UPS.gif";
-import pushUpsImg from "../../../backend/animations/PUSH - UPS.jpg";
+import pushUpsGif from "../animations/PUSH-UPS.gif";
+import pushUpsImg from "../animations/PUSH - UPS.jpg";
 
-import squatsGif from "../../../backend/animations/SQUATSm.gif";
-import squatsImg from "../../../backend/animations/SQUATSM.jpg";
+import squatsGif from "../animations/SQUATSm.gif";
+import squatsImg from "../animations/SQUATSM.jpg";
 
-import wallSitImg from "../../../backend/animations/Wwall sit.jpg";
-import wallSitGif from "../../../backend/animations/Wwall sit.jpg";
+import wallSitImg from "../animations/Wwall sit.jpg";
+import wallSitGif from "../animations/Wwall sit.jpg";
 
-import legRaisesGif from "../../../backend/animations/LEG RAISES.gif";
-import legRaisesImg from "../../../backend/animations/LEG RAISES.jpg";
+import legRaisesGif from "../animations/LEG RAISES.gif";
+import legRaisesImg from "../animations/LEG RAISES.jpg";
 
-import buttBridgeGif from "../../../backend/animations/BUTT BRIDGEw.gif";
-import buttBridgeImg from "../../../backend/animations/BUTT BRIDGE.jpg";
+import buttBridgeGif from "../animations/BUTT BRIDGEw.gif";
+import buttBridgeImg from "../animations/BUTT BRIDGE.jpg";
 
-import yogaGif from "../../../backend/animations/yoga.gif";
-import yogaImg from "../../../backend/animations/yoga.jpg";
+import yogaGif from "../animations/yoga.gif";
+import yogaImg from "../animations/yoga.jpg";
 
 const exercises: Exercise[] = [
   // 🔹 Balanced Strength + Cardio (4)
