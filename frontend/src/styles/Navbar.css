@@ -1,0 +1,103 @@
+/* Navbar container */
+.navb{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-block: 5px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 800;
+  color: #16a34a;
+  transition: color 0.3s ease;
+  line-height: 1;
+
+}
+
+.navbar-logo:hover {
+  color: #15803d;
+}
+
+.no-underline{
+ text-decoration: none !important;
+ 
+}
+
+.logoimg{
+  height: 45px ;
+  width: auto ;
+}
+
+/* Desktop menu links */
+.navbar-link {
+  position: relative;
+  font-weight: 700;
+  color: #067608;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  margin-left: 15px;
+  margin-right: 15px;
+  
+}
+
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background-color: #16a34a;
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #16a34a;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
+.navbar-btn {
+  padding: 0.6rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  box-shadow: 0 6px 15px rgba(22, 163, 74, 0.25);
+  transition: all 0.3s ease;
+}
+
+.navbar-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.35);
+}
+
+/* Mobile menu button */
+.menu-btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: #374151;
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  color: #16a34a;
+  background-color: #f0fdf4;
+}

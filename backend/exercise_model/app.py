@@ -1,0 +1,72 @@
+
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import joblib
+import numpy as np
+
+app = Flask(__name__)
+CORS(app)
+
+#  load bundle
+bundle = joblib.load("lifemate_model11.pkl")
+
+model = bundle["model"]
+le_gender = bundle["le_gender"]
+le_activity = bundle["le_activity"]
+le_target = bundle["le_target"]
+le_bmi = bundle["le_bmi"]
+feature_cols = bundle["feature_cols"]
+
+#  BMI category function (same as training)
+def bmi_category(bmi):
+    if bmi < 18.5:
+        return "underweight"
+    elif bmi < 25:
+        return "healthy"
+    elif bmi < 30:
+        return "overweight"
+    else:
+        return "obese"
+
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    try:
+        data = request.get_json()
+        print("Incoming:", data)
+
+        # normalize
+        gender = data["gender"].lower().strip()
+        activity = data["activity_level"].lower().strip()
+
+        # encode
+        gender_encoded = le_gender.transform([gender])[0]
+        activity_encoded = le_activity.transform([activity])[0]
+
+        #  compute bmi category
+        bmi = float(data["bmi"])
+        bmi_cat = bmi_category(bmi)
+        bmi_encoded = le_bmi.transform([bmi_cat])[0]
+
+        #  correct feature order
+        features = np.array([[
+            int(data["age"]),
+            float(data["avg_sleep_hours"]),
+            float(data["avg_water_intake_liters"]),
+            gender_encoded,
+            activity_encoded,
+            bmi_encoded
+        ]])
+
+        pred = model.predict(features)[0]
+        exercise = le_target.inverse_transform([pred])[0]
+
+        return jsonify({"exercise": exercise})
+
+    except Exception as e:
+        print("ERROR:", e)
+        return jsonify({"error": str(e)}), 500
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
