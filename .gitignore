@@ -8,7 +8,7 @@ __pycache__
 backend/.env
 frontend/.env
 # ML model
-backend/exercise_model/*.pkl
+
 
 
 # Node
