@@ -105,7 +105,7 @@ def bmi_category(bmi):
         return "obese"
 
 
-# ⭐ health check route (Render uses this)
+#  health check route (Render uses this)
 @app.route("/")
 def home():
     return "LifeMate ML API running"
