@@ -649,7 +649,7 @@ export default function Exercise() {
           </div>
         ))}
       </div>
-      <div className="guidence">Click on the card to see proper animated guidence.</div>
+      <div className="guidance">Click on the cards to see the proper animated guidance.</div>
     </div>
   );
 }
