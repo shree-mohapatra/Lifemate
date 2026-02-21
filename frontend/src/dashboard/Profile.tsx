@@ -385,7 +385,7 @@ const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
       {savingWeight && (
         <div className="uploading-overlay">
           <div className="spinner"></div>
-          <p>Saving weight to history...</p>
+          <p>Updating profile...</p>
         </div>
       )}
 

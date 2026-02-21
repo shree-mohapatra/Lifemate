@@ -48,7 +48,7 @@ export default function Diet() {
     fetchProfile();
   }, [navigate]);
 
-  if (loading) return <p>Loading diet plan...</p>;
+  if (loading) return <p className="hydrate-loading">Loading diet plan...</p>;
 
   if (
     !profile?.dob ||

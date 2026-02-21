@@ -1,80 +1,82 @@
-/* Reset safety */
+/* ================= Global Reset ================= */
+
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
-  width: 100%;
-  height: 100%;
   margin: 0;
-  overflow-x: hidden; 
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Layout */
+/* ================= Layout ================= */
+
 .layout {
-  display: flex;
-  width: 100%;
+  min-height: 100vh;
   background-color: #f9fafb;
+  position: relative;
 }
 
-/* Sidebar */
+/* ================= Sidebar ================= */
+
 .sidebar {
   width: 260px;
   background: #ffffff;
   border-right: 1px solid #e5e7eb;
+  height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
-  height: 100vh;
-  overflow: hidden; 
-  display: none;
-  z-index: 20;
+  left: -260px; /* Hidden on mobile */
+  transition: left 0.3s ease;
+  z-index: 40;
+  padding: 20px;
+  overflow-y: auto;
 }
+
+.sidebar.open {
+  left: 0;
+}
+
+/* Overlay (Mobile only) */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 30;
+}
+
+/* ================= Logo ================= */
 
 .logo-container {
   display: flex;
   align-items: center;
   gap: 12px;
-
-  padding: 12px 16px;
   margin-bottom: 40px;
-
-  border-radius: 5px;
+  padding: 12px;
+  border-radius: 8px;
   background: #ffffff;
-  width: 100%;
-  transition: all 0.25s ease;
   box-shadow: 3px 6px 18px rgba(22, 163, 74, 0.18);
 }
 
-.logo-container:hover {
-  box-shadow: 5px 10px 28px rgba(22, 163, 74, 0.28);
-}
-
 .Logo-img {
-  width: 48px;
-  height: 48px;
+  width: 45px;
+  height: 45px;
   object-fit: contain;
-   
-  margin: 0;             
-}
-
-.sidebar-content {
- display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .logo-text {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: #16a34a;
-  line-height: 1;
 }
 
+/* ================= Navigation ================= */
 
-
-/* Navigation */
 .nav {
   display: flex;
   flex-direction: column;
@@ -89,8 +91,7 @@ body {
   border-radius: 10px;
   color: #374151;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
-  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .nav-item:hover {
@@ -103,22 +104,19 @@ body {
   font-weight: 600;
 }
 
-.nav-item.disabled {
-  color: #9ca3af;
-  cursor: not-allowed;
-}
+/* ================= Mobile Header ================= */
 
-/* Mobile Header */
 .mobile-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: white;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 30;
+  z-index: 20;
 }
 
 .menu-btn {
@@ -129,21 +127,25 @@ body {
   color: #374151;
 }
 
-/* Main Content */
+/* ================= Main Content ================= */
+
 .main-content {
-  margin-left: 260px;     
-  width: calc(100% - 260px);
+  width: 100%;
+  padding: 20px;
   min-height: 100vh;
-  padding: 32px;
-  overflow-y: auto;
-  background: #f9fafb;   
+  transition: all 0.3s ease;
 }
 
+/* ================= Desktop View ================= */
 
-/* Desktop */
 @media (min-width: 768px) {
+
   .sidebar {
-    display: block;
+    left: 0;
+  }
+
+  .overlay {
+    display: none;
   }
 
   .mobile-header {
@@ -151,14 +153,8 @@ body {
   }
 
   .main-content {
-    margin-left: 260px; 
-    width: calc(100% - 260px); 
-   
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 32px;
   }
-}
-
-.mobile-header .Logo-img {
-  width: 36px;
-  height: 36px;
-  margin-bottom: 0;
 }

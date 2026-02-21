@@ -22,6 +22,10 @@ transition: 0.3s;
 background: #16a34a;
 }
 
+.loading{
+  text-align: center;
+}
+
 /* Heading */
 .exercise-page h2 {
 font-size: 28px;

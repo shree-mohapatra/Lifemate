@@ -577,7 +577,7 @@ export default function Exercise() {
     callML();
   }, []);
 
-  if (loading) return <p>Loading exercises...</p>;
+  if (loading) return <p className="hydrate-loading">Loading exercises...</p>;
 
   // ⭐ profile incomplete UI
   if (
@@ -614,11 +614,15 @@ export default function Exercise() {
       <div className="exercise-grid">
         {mlExercises.map((ex, index) => (
           <div
-            key={index}
+           key={index}
             className="exercise-card"
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
+             onMouseEnter={() => setHoveredIndex(index)}
+             onMouseLeave={() => setHoveredIndex(null)}
+             onClick={() =>
+             setHoveredIndex(hoveredIndex === index ? null : index)
+              }
+            >
+
             <div className="exercise-media">
               <img
                 src={hoveredIndex === index ? ex.gif : ex.image}

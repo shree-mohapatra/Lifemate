@@ -139,14 +139,11 @@
   transform: none;
 }
 
-/*save button styling*/
 
-/* ⭐ SAVE BUTTON */
-/* SAVE MODE */
 .edit-btn.save-btn {
   background: white;
-  color: #22c55e;              /* ⭐ green text */
-  border: 2px solid #22c55e;   /* optional nice outline */
+  color: #22c55e;             
+  border: 2px solid #22c55e;  
   box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
 }
 
@@ -221,23 +218,32 @@
   padding: 18px 0;
   border-bottom: 1px solid rgba(226, 232, 240, 0.6);
   gap: 16px;
-  transition: all 0.3s ease;
+ 
 }
 
 .profile-row:last-child {
   border-bottom: none;
 }
 
-.profile-row:hover {
-  background: linear-gradient(90deg, 
-    rgba(248, 250, 252, 0) 0%,
-    rgba(248, 250, 252, 0.8) 50%,
-    rgba(248, 250, 252, 0) 100%);
-  transform: translateX(10px);
-  border-radius: 12px;
-  padding-left: 12px;
-  padding-right: 12px;
+.profile-row {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
+
+.profile-row:hover {
+  background: #f9fafb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+
+@media (hover: none) {
+  .profile-row:hover {
+    transform: none;
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+  }
+}
+
 
 .profile-label {
   color: #475569;
@@ -282,13 +288,15 @@
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+
 .profile-input:focus {
   border-color: #4f46e5;
   box-shadow: 
     0 0 0 3px rgba(79, 70, 229, 0.1),
     inset 0 2px 4px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
+  transform: none; 
 }
+
 
 .profile-input:hover:not(:disabled) {
   border-color: #cbd5e1;
@@ -727,9 +735,7 @@ select.profile-input {
     width: 100%;
   }
   
-  .profile-row:hover {
-    transform: translateX(5px);
-  }
+  
   
   .crop-box {
     width: 300px;

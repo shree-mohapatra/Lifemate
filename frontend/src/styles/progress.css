@@ -779,9 +779,6 @@
     height: 200px;
   }
   
-  .weight-fill {
-    width: 35px;
-  }
   
   .weight-date {
     font-size: 0.8rem;
@@ -838,11 +835,45 @@
   .bar {
     width: 30px;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .weight-bars {
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .weight-bar {
+    flex: 1;
+    min-width: 0;
+  }
+
   .weight-fill {
-    width: 30px;
+    width: 100%;
+    max-width: 28px;
   }
 }
+
+@media (max-width: 480px) {
+  .weight-bars {
+    gap: 4px;
+  }
+
+  .weight-fill {
+    max-width: 22px;
+  }
+
+  .weight-date {
+    font-size: 0.7rem;
+    min-width: auto;
+  }
+
+  .weight-label {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+  }
+}
+
 
 /* Animation for bars */
 @keyframes barRise {

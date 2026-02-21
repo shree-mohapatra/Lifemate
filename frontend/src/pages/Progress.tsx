@@ -159,7 +159,7 @@ if (storedWeekly.weekStart !== currentWeekStart) {
       .select("weight_kg, recorded_at")
       .eq("user_id", uid)
       .order("recorded_at", { ascending: false })
-      .limit(7);
+      .limit(5);
 
     if (error || !weights || weights.length === 0) {
       setWeightData([]);
@@ -268,11 +268,11 @@ if (storedWeekly.weekStart !== currentWeekStart) {
     
     if (range < 2) {
       const position = index / (allWeights.length - 1);
-      return 60 + (position * 60);
+      return 50 + (position * 50);
     }
     
     const normalized = (weight - minWeight) / range;
-    return 40 + (normalized * 110);
+    return 30 + (normalized * 90);
   };
 
   return (
@@ -339,7 +339,6 @@ if (storedWeekly.weekStart !== currentWeekStart) {
               {chartData.map((point, index) => {
                 const dateObj = new Date(point.date);
                 const dayLabel = dateObj.toLocaleDateString('en-US', { 
-                  weekday: 'short',
                   month: 'short',
                   day: 'numeric'
                 });
