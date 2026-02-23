@@ -1,9 +1,27 @@
 import Navbar from "../components/Navbar";
 import "../styles/LandingPage.css";
-import { Link } from "react-router-dom";
+
 import Footer from '../components/Footer';
+import { useEffect, useState } from "react";
+import { supabase } from "../supabaseClient";
+import { useNavigate } from "react-router-dom";
+
 
 const Landing = () => {
+  const navigate = useNavigate();
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+useEffect(() => {
+  const checkUser = async () => {
+    const { data } = await supabase.auth.getSession();
+    if (data.session) {
+      setIsLoggedIn(true);
+    }
+  };
+
+  checkUser();
+}, []);
+
   const userName = "John";
 
   return (
@@ -20,10 +38,13 @@ const Landing = () => {
             Get personalized diet plans, daily habits, and future health predictions based on your body stats — in minutes.
           </p>
 
-          <Link  to="/signin"
-          className="flex items-center gap-2 no-underline h-full">
-            <button className="btn-primary">Start Today →</button>
-          </Link>
+           <button
+            className="btn-primar"
+            onClick={() =>
+              navigate(isLoggedIn ? "/dashboard" : "/signin")
+            }>
+            Start Today →
+          </button>
         </div>
       </section>
 
@@ -134,11 +155,15 @@ const Landing = () => {
         <h3>Ready to Meet Your Healthier Self?</h3>
         <p className="pb-5">No diets. No guesswork. Just guidance.</p>
         <br />
-       <Link to="/signin"
-          className="flex items-center gap-2 no-underline h-full">
-          <button className="btn-primary">Create Your Lifemate Plan →</button>
 
-    </Link>
+
+        <button
+          className="btn-primar"
+          onClick={() =>
+            navigate(isLoggedIn ? "/dashboard" : "/signin")
+          }>
+         Create Your Lifemate Plan →
+         </button>
       </section>
 
       <Footer/>

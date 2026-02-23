@@ -31,9 +31,6 @@ const Navbar = () => {
 
           {/* CTA + Hamburger */}
           <div className="right-section">
-            <Link to="/signin" className="no-underline">
-              <button className="navbar-btn">Get Started</button>
-            </Link>
 
             {/* Mobile Menu Button */}
             <button

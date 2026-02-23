@@ -81,12 +81,91 @@
   display: none;
 }
 
-.navbar-link{
+.navbar-link {
+  position: relative;
   text-decoration: none;
-  color: green;
-  font-weight: 500;
+  color: #15803d;
+  font-weight: 700;
+  margin: 0 8px;
+  transition: color 0.3s ease;
 }
 
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -4px;
+  background: #16a34a;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-link:hover {
+  color: #166534;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+
+/* ===== MOBILE MENU CONTAINER ===== */
+.mobile-menu {
+  position: absolute;
+  top: 70px;
+  right: 1rem;
+  width: 88%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 22px;
+  padding: 1.2rem 0.5rem;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  animation: fadeSlide 0.35s ease;
+}
+
+/* Menu Items */
+.mobile-menu a {
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  text-align: center;       
+  padding: 1.2rem;
+  margin: 0.6rem 1rem;
+  border-radius: 16px;
+  font-size: 1.25rem;        
+  font-weight: 700;
+  text-decoration: none;
+  color: #14532d;
+  transition: all 0.3s ease;
+}
+
+
+/* Hover Effect */
+.mobile-menu a:hover {
+  background: linear-gradient(135deg, #16a34a, #14b8a6);
+  color: white;
+  transform: translateX(6px);
+}
+
+/* Active Item */
+.mobile-menu a.active {
+  background: #dcfce7;
+  border-left: 4px solid #16a34a;
+}
+
+/* Animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* ========================= */
 /* ✅ RESPONSIVE SECTION */
 /* ========================= */

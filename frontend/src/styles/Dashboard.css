@@ -314,7 +314,7 @@
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 15px 40px rgba(79, 70, 229, 0.4);
   background: linear-gradient(135deg, #4338ca, #6d28d9);
-  color: white;
+  
 }
 
 .habit-card:active {

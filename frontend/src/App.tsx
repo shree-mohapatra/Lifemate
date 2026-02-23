@@ -13,6 +13,7 @@ import Exercise from './pages/Exercise';
 import HydrateMore from './pages/Hydrate';
 import Habits from './pages/Habits';
 import Progress from './pages/Progress';
+import ProtectedRoute from './auth/ProtectedRoute';
 
 
 function App() {
@@ -28,7 +29,12 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
 
         {/* Dashboard (protected by DashboardLayout) */}
-        <Route path="/dashboard" element={<DashboardLayout />}>
+         <Route path="/dashboard" element={
+         <ProtectedRoute>
+           <DashboardLayout />
+         </ProtectedRoute>
+           }
+         >
           <Route index element={<Dashboard />} />
           {/* relative path (correct nesting) */}
           <Route path="profile" element={<Profile />} />
