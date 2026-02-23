@@ -64,7 +64,8 @@ export default function SignUp() {
         .from("profiles")
         .select("id")
         .eq("username", username)
-        .single();
+        .maybeSingle();
+;
 
       if (existingUser) {
         setError("Already exist, use another username");
