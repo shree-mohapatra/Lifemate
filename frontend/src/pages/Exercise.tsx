@@ -577,7 +577,23 @@ export default function Exercise() {
     callML();
   }, []);
 
-  if (loading) return <div className="loading-container"><div className="loading-spinner"></div></div>;
+  if (loading) return <div className="loader-container">
+  <div className="loader-wrapper">
+    <span className="loader-letter">G</span>
+    <span className="loader-letter">e</span>
+    <span className="loader-letter">n</span>
+    <span className="loader-letter">e</span>
+    <span className="loader-letter">r</span>
+    <span className="loader-letter">a</span>
+    <span className="loader-letter">t</span>
+    <span className="loader-letter">i</span>
+    <span className="loader-letter">n</span>
+    <span className="loader-letter">g</span>
+    <div className="loader"></div>
+  </div>
+</div>
+
+;
 
   // ⭐ profile incomplete UI
   if (
