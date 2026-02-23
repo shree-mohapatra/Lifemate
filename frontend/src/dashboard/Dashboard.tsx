@@ -185,7 +185,7 @@ const skinTips =
 
  
   if (loading) {
-    return <div className="hydrate-loading">Loading...</div>;
+    return <div className="loading-container"><div className="loading-spinner"></div></div>;
   } 
 
 

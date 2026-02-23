@@ -292,7 +292,7 @@ export default function Habits() {
   };
 
   if (loading && !dayCompleted) {
-  return <p>Loading today's habits...</p>;
+  return <div className="loading-container"><div className="loading-spinner"></div></div>;
 }
 
 

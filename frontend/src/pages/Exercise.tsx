@@ -577,7 +577,7 @@ export default function Exercise() {
     callML();
   }, []);
 
-  if (loading) return <p className="hydrate-loading">Loading exercises...</p>;
+  if (loading) return <div className="loading-container"><div className="loading-spinner"></div></div>;
 
   // ⭐ profile incomplete UI
   if (
